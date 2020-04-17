@@ -2,10 +2,38 @@
 \chapter{Leggi fondamentali}
 \label{chap:Leggi_fondamentali}
 
-\begin{legge}
+\begin{legge}\label{legge:1}
   Un euro oggi vale più di un euro domani.
 \end{legge}
 
-\begin{legge}
+La legge \ref{legge:1} è espressa dalla seguente formula del \emph{valore attuale}
+\VA\ per un flusso di cassa  $C$ disponibile al tempo futuro $t_1$
+\begin{equation}
+  \label{eq:VA}
+  \VA=\frac{C_1}{1+r_1}
+\end{equation}
+dove il numero (si spera) positivo $r_1$ è chiamato \emph{rendimento} o \emph{tasso di sconto} o
+\emph{costo del capitale}.
+La formula \eqref{eq:VA} viene comunemente messa nella forma
+\[
+  C_1=(1+r_1)\VA
+\]
+perché così si enfatizza la grandezza relativa del flusso di cassa futuro rispetto al valore attuale.
+Questa forma è in un certo senso fuorviante perché mentre \VA\ è certo, è un qualcosa che esiste ora,
+nel presente, $C_1$ è incerto come il futuro.
+
+
+\begin{legge}\label{legge:2}
   Un euro domani vale più un euro dopodomani.
 \end{legge}
+
+La legge \ref{legge:2} non è di solito espressa da una formula come \eqref{eq:VA} ma da una disuguaglianza:
+se $\VA_{t_1}$ e $\VA_{t_2}$ sono rispettivamente i valori attuali di uno stesso flusso di cassa $C_1$ disponibile
+a due tempi futuri $t_1<t_2$, allora deve essere
+\begin{equation}
+  \label{eq:legge2}
+  \VA_{t_1}>\VA_{t_2}
+\end{equation}
+
+La legge \ref{legge:2} formalizza il fatto che non è possibile creare denaro dal nulla (\cite{brealey_et_al1999},
+§3.1.2 p. 35).
