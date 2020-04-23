@@ -3,7 +3,7 @@
 %   Prontuario di matematica finanziaria
 % 
 %********************************************************************
-\documentclass[a4paper,10pt]{memoir}
+\documentclass[a4paper,10pt]{book}
 %********************************************************************
 %            Packages
 %********************************************************************
@@ -15,6 +15,7 @@
 \usepackage{mathrsfs}
 \usepackage{fouriernc}
 % \usepackage{mathtime}
+\usepackage{makeidx}
 \usepackage{IEEEtrantools}
 \usepackage{cite}
 \newcommand{\dm}{\mathrm{d}}
@@ -39,6 +40,8 @@
 \makeindex
 \begin{document}
 \maketitle
+\tableofcontents
+\mainmatter
 \include{capitolo1}
 %\include{capitolo2}
 %\include{capitolo3}
