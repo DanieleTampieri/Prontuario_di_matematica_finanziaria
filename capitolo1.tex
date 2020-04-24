@@ -3,32 +3,37 @@
 \label{chap:Leggi_fondamentali}
 
 \begin{legge}\label{law:0}
-  Esiste un mercato dei capitali, dove si vendono e si acquistano risorse economiche.
+  Esiste un mercato dei capitali.
 \end{legge}
 
-Chiameremo \emph{euro} la generica unità di misura del capitale, senza riferimento alcuno alla
-valuta con lo stesso nome: avremmo potuto usare ``soldo''
+I capitali sono risorse economiche, ``flussi di cassa'', qualcosa che per tutti ha un ``valore''.
+Chiameremo \emph{euro} la generica unità di misura del capitale, valore o che dir si voglia, senza
+riferimento alcuno alla valuta con lo stesso nome: avremmo potuto usare ``soldo''.
 
 \begin{legge}\label{legge:1}
   Un euro oggi vale più di un euro domani.
 \end{legge}
 
 La legge \ref{legge:1} è espressa dalla seguente formula del \emph{valore attuale}
-\VA\ per un flusso di cassa  $C_1$ disponibile al tempo futuro $t_1$
+\VA: il valore attuale di un possible un flusso di cassa futuro $C_1$, disponibile
+al tempo $t_1$, è
 \begin{equation}
   \label{eq:VA}
   \VA=\frac{C_1}{1+r_1}
 \end{equation}
-dove il numero (si spera) positivo $r_1$ è chiamato \emph{rendimento} o \emph{tasso di sconto} o
-\emph{costo del capitale}.
-La formula \eqref{eq:VA} viene comunemente messa nella forma
+dove il numero positivo $r_1$ è chiamato \emph{rendimento} o \emph{tasso di sconto} o
+\emph{costo del capitale}. Calcolare il valore attuale \VA\ di un flusso di cassa futuro
+si dice anche ``attualizzare'' il flusso di cassa.
+La formula \eqref{eq:VA} viene comunemente espressa nella forma seguente
 \[
   C_1=(1+r_1)\VA
 \]
-perché così si enfatizza la grandezza relativa del flusso di cassa futuro rispetto al valore attuale.
+perché quest enfatizza la grandezza relativa del flusso di cassa futuro rispetto al valore attuale.
 Questa forma è in un certo senso fuorviante perché mentre \VA\ è certo, è un qualcosa che esiste ora,
-nel presente, $C_1$ è incerto come il futuro. E la considerazione dell'incertezza ci porta al secondo
-principio dell'economia
+nel presente, $C_1$ è incerto come il futuro.
+
+E la considerazione dell'incertezza ci porta al secondo
+principio dell'economia (\cite{brealey_et_al1999}, §2.1.3 p. 14)
 
 \begin{legge}\label{legge:2}
   Un euro sicuro vale più di un euro rischioso.  
@@ -37,7 +42,11 @@ principio dell'economia
 La legge \ref{legge:2} stabilisce come cambia il valore del tasso di sconto $r_1$ in funzione del
 rischio che si assume per un dato investimento: un flusso di cassa futuro, a parità di valore nominale,
 ha un valore attuale maggiore se è meno rischioso quindi, all'aumentare del rischio, il valore attuale
-diminuisce quindi il tasso di sconto è maggiore. 
+diminuisce quindi il tasso di sconto è maggiore.
+
+Avendo capito come attualizzare flussi di cassa futuri e introdotto il concetto rischio, possiamo introdurre
+la prossima legge dell'economia, che ci dice quale è la relazione tra i rischi di flussi di cassa disponibili
+a tempi sempre più distaanti nel futuro.
 
 \begin{legge}\label{legge:3}
   Un euro domani vale più un euro dopodomani.
@@ -51,5 +60,5 @@ a due tempi futuri $t_1<t_2$, allora deve essere
   \VA_{t_1}>\VA_{t_2}
 \end{equation}
 
-La legge \ref{legge:3} formalizza il fatto che non è possibile creare denaro dal nulla (\cite{brealey_et_al1999},
+La legge \ref{legge:3} formalizza il fatto che non è possibile creare capitale dal nulla (\cite{brealey_et_al1999},
 §3.1.2 p. 35).
