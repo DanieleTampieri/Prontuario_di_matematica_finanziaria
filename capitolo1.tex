@@ -5,7 +5,6 @@
 \begin{legge}\label{law:0}
   Esiste un mercato dei capitali.
 \end{legge}
-
 I capitali sono risorse economiche, ``flussi di cassa'', qualcosa che per tutti ha un ``valore''.
 Chiameremo \emph{euro} la generica unità di misura del capitale, valore o che dir si voglia, senza
 riferimento alcuno alla valuta con lo stesso nome: avremmo potuto usare ``soldo''.
@@ -13,52 +12,50 @@ riferimento alcuno alla valuta con lo stesso nome: avremmo potuto usare ``soldo'
 \begin{legge}\label{legge:1}
   Un euro oggi vale più di un euro domani.
 \end{legge}
-
 La legge \ref{legge:1} è espressa dalla seguente formula del \emph{valore attuale}
-\VA: il valore attuale di un possible un flusso di cassa futuro $C_1$, disponibile
-al tempo $t_1$, è
+\VA: il valore attuale di un possible un flusso di cassa futuro $C$, disponibile
+al tempo futuro $t$, è
 \begin{equation}
   \label{eq:VA}
-  \VA=\frac{C_1}{1+r_1}
+  \VA=\frac{C}{1+r}
 \end{equation}
-dove il numero positivo $r_1$ è chiamato \emph{rendimento} o \emph{tasso di sconto} o
+dove il numero positivo $r$ è chiamato \emph{rendimento} o \emph{tasso di sconto} o
 \emph{costo del capitale}. Calcolare il valore attuale \VA\ di un flusso di cassa futuro
 si dice anche ``attualizzare'' il flusso di cassa.
-La formula \eqref{eq:VA} viene comunemente espressa nella forma seguente
+La formula \eqref{eq:VA} viene comunemente espressa nella forma 
 \[
-  C_1=(1+r_1)\VA
+  C=(1+r)\VA,
 \]
-perché quest enfatizza la grandezza relativa del flusso di cassa futuro rispetto al valore attuale.
-Questa forma è in un certo senso fuorviante perché mentre \VA\ è certo, è un qualcosa che esiste ora,
-nel presente, $C_1$ è incerto come il futuro.
+che enfatizza la grandezza relativa del flusso di cassa futuro rispetto al valore attuale.
+Questa forma è però, in un certo senso, fuorviante perché $C$ è incerto come il futuro a
+cui appartiene, mentre \VA\ è certo, disponibile ora, nel presente.
 
-E la considerazione dell'incertezza ci porta al secondo
+La considerazione dell'incertezza ci porta al secondo
 principio dell'economia (\cite{brealey_et_al1999}, §2.1.3 p. 14)
 
 \begin{legge}\label{legge:2}
   Un euro sicuro vale più di un euro rischioso.  
 \end{legge}
-
-La legge \ref{legge:2} stabilisce come cambia il valore del tasso di sconto $r_1$ in funzione del
+La legge \ref{legge:2} stabilisce come cambia il valore del tasso di sconto $r$ in funzione del
 rischio che si assume per un dato investimento: un flusso di cassa futuro, a parità di valore nominale,
 ha un valore attuale maggiore se è meno rischioso quindi, all'aumentare del rischio, il valore attuale
 diminuisce quindi il tasso di sconto è maggiore.
 
 Avendo capito come attualizzare flussi di cassa futuri e introdotto il concetto rischio, possiamo introdurre
 la prossima legge dell'economia, che ci dice quale è la relazione tra i rischi di flussi di cassa disponibili
-a tempi sempre più distaanti nel futuro.
+a tempi sempre più distanti nel futuro.
 
 \begin{legge}\label{legge:3}
   Un euro domani vale più un euro dopodomani.
 \end{legge}
-
 La legge \ref{legge:3} non è di solito espressa da una formula come \eqref{eq:VA} ma da una disuguaglianza:
-se $\VA_{t_1}$ e $\VA_{t_2}$ sono rispettivamente i valori attuali di uno stesso flusso di cassa $C_1$ disponibile
-a due tempi futuri $t_1<t_2$, allora deve essere
+se $\VA_{t_1}$ e $\VA_{t_2}$ sono rispettivamente i valori attuali di uno stesso flusso di cassa $C$ che può
+essere disponibile in due diversi tempi futuri $t_1$ e $t_2$ con $t_1<t_2$, allora deve essere
 \begin{equation}
   \label{eq:legge2}
   \VA_{t_1}>\VA_{t_2}
 \end{equation}
-
 La legge \ref{legge:3} formalizza il fatto che non è possibile creare capitale dal nulla (\cite{brealey_et_al1999},
 §3.1.2 p. 35).
+
+Definito il valore attuale \VA\ di un flusso di cassa futuro, occorre stabilire come calcolare 
