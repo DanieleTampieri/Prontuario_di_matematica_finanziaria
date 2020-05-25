@@ -1,14 +1,15 @@
-\chapter{Formule fondamentali}
+\chapter{Formule di calcolo}
 \label{chap:Formule_fondamentali}
 
-Il valore attuale \VA\ di un investimento che produce un unico flusso di cassa
-$C$ al tempo futuro $t$ è definito dalla formula \eqref{eq:VA}. Ad ogni investimento
-è però richiesto producono flussi di cassa ad intervalli di tempo regolari, ad esempio annuali, stabiliti
-: come si deve calcolare
-il tasso di interesse di un flusso di cassa che verrà prodotto solo ad $n$ anni di distanza
-dall'investimento? di solito un investimento produce più
-flussi di cassa che si rendono disponibili a più tempi futuri.
-La situazione che si crea in questi  è equivalente 
+Il valore attuale \VA\ di un investimento che produce un flusso di cassa
+$C$ nel periodo $t$ è definito dalla formula \eqref{eq:VA}. È però necessario
+poter valutare (attualizzare) un investimento che  genera flussi di cassa durante
+due o più periodi successivi: lo scopo di questa sezione è generalizzare la formula
+del valore attuale in tal senso.
+
+Iniziamo definendo come si deve calcolare il valore
+attuale di un flusso di cassa che viene prodotto solo dopo $n$ periodi di valutazione,
+con $n\ge 2$. 
 In questo caso, occorre accordarsi a priori su come definire il valore attuale
 di un investimento: due scelte comuni sono le seguenti.In generale però ogni i
 \begin{defn}. Un investimento ha \emph{interesse semplice} se il flusso di cassa
@@ -19,7 +20,13 @@ Se abbiamo un investimento che produce $n$ flussi di cassa di valore
   \label{eq:i_semplice}
   \VA=\frac{C}{1+\sum_{i=1}^nr_i}
 \end{equation}
+Nell'ipotesi  (alquanto improbabile) che il tasso di rendimento sia costante per tutti
+gli $n$ periodi di valutazione, la formula \eqref{eq:i_semplice} assume la seguente semplice
+forma:
+\[
+  \VA=\frac{C}{1+nr}
+\]
 \begin{defn}
-  Un investimento 
+  Un investimento ha interesse composito 
 \end{defn}
 
