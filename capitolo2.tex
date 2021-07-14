@@ -2,14 +2,25 @@
 \label{chap:Formule_fondamentali}
 
 Il valore attuale \VA\ di un investimento che produce un flusso di cassa
-$C$ nel periodo $t$ è definito dalla formula \eqref{eq:VA}. È però necessario
-poter valutare (attualizzare) un investimento che  genera flussi di cassa durante
+$C$ in un periodo di tempo $t$ è stato definito nel capitolo \ref{chap:Leggi_fondamentali}
+dalla formula \eqref{eq:VA}. In detta formula la dipendenza dal tempo $t$ è però implicita:
+è lo scopo di questo capitolo rendere esplicita questa dipendenza, quindi mostrare come cambia
+il valore attuale di un investimento quando viene considerato per periodi più lungh del tempo
+di riferimento ceonvenuto. Una indicazione qualitativa è gia data dalla la legge \ref{legge:3}:
+più il ritorno di investimento viene pagato lontano nel tempo, più il valore attuale diminuisce
+come effetto della legge \ref{legge:1}.
+ 
+non è quasi. sempre considerato  necessario
+poter valutare (attualizzare) un investimento che genera flussi di cassa durante
 due o più periodi successivi: lo scopo di questa sezione è generalizzare la formula
-del valore attuale in tal senso.
+del valore attuale in tal senso. Chiameremo \emph{anno} il sigolo periodo di valutazione,
+senza nessun riferimento alla unità di misura del tempo che ha lo stesso nome: il periodo
+di valutazione considerato può avere durata ad esempio di 6 mesi, 1 mese, 4 settimane, un
+giorno, un minuto, senza che cambi la logica del discorso
 
-Iniziamo definendo come si deve calcolare il valore
-attuale di un flusso di cassa che viene prodotto solo dopo $n$ periodi di valutazione,
-con $n\ge 2$. 
+Iniziamo definendo come si deve calcolare il valore attuale di un flusso di cassa
+prodotto solo dopo $n$ periodi di valutazione, con $n\ge 2$:
+
 In questo caso, occorre accordarsi a priori su come definire il valore attuale
 di un investimento: due scelte comuni sono le seguenti.In generale però ogni i
 \begin{defn}. Un investimento ha \emph{interesse semplice} se il flusso di cassa
@@ -17,16 +28,28 @@ di un investimento: due scelte comuni sono le seguenti.In generale però ogni i
 \end{defn}
 Se abbiamo un investimento che produce $n$ flussi di cassa di valore 
 \begin{equation}
-  \label{eq:i_semplice}
+  \label{eq:isemplice}
   \VA=\frac{C}{1+\sum_{i=1}^nr_i}
 \end{equation}
 Nell'ipotesi  (alquanto improbabile) che il tasso di rendimento sia costante per tutti
-gli $n$ periodi di valutazione, la formula \eqref{eq:i_semplice} assume la seguente semplice
+gli $n$ periodi di valutazione, la formula \eqref{eq:isemplice} assume la seguente semplice
 forma:
 \[
   \VA=\frac{C}{1+nr}
 \]
 \begin{defn}
-  Un investimento ha interesse composito 
+  Un investimento ha interesse composito sen
 \end{defn}
+Se abbiamo un investimento a interesse semplice che produce un flusso di cassa $C$ dopo
+$n$ anni
+\begin{equation}
+  \label{eq:icomposto}
+  \VA=\frac{C}{\prod_{i=1}^n(1+r_i)}
+\end{equation}
+Nell'ipotesi  (alquanto improbabile) che il tasso di rendimento sia costante per tutti
+gli $n$ periodi di valutazione, la formula \eqref{eq:isemplice} assume la seguente semplice
+forma:
+\[
+  \VA=\frac{C}{(1+r)^n}
+\]
 
