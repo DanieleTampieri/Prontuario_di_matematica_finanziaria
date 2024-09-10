@@ -1,55 +1,212 @@
-\chapter{Formule di calcolo}
+\chapter[Il calcolo del valore attuale]{Il calcolo del valore attuale per investimenti con tempi di capitalizzazione  arbitrari}
 \label{chap:Formule_fondamentali}
 
-Il valore attuale \VA\ di un investimento che produce un flusso di cassa
-$C$ in un periodo di tempo $t$ è stato definito nel capitolo \ref{chap:Leggi_fondamentali}
-dalla formula \eqref{eq:VA}. In detta formula la dipendenza dal tempo $t$ è però implicita:
-è lo scopo di questo capitolo rendere esplicita questa dipendenza, quindi mostrare come cambia
-il valore attuale di un investimento quando viene considerato per periodi più lungh del tempo
-di riferimento ceonvenuto. Una indicazione qualitativa è gia data dalla la legge \ref{legge:3}:
-più il ritorno di investimento viene pagato lontano nel tempo, più il valore attuale diminuisce
-come effetto della legge \ref{legge:1}.
+Il valore attuale \VA\ di un investimento che produce un flusso di cassa $C$ è stato definito nel capitolo
+\ref{chap:Leggi_fondamentali} dalla formula~\eqref{eq:VA}. In questa formula è implicita la dipendenza del
+valore attuale dal periodo di capitalizzazione $t$: scopo di questo capitolo è esplicitare questa dipendenza,
+vale a dire mostrare come cambia il valore attuale di un investimento che genera più flussi di cassa a più
+tempi futuri.
+Una indicazione di quello che deve essere l'andamento qualitativo del valore attuale in funzione del tempo
+di capitalizzazione è già data dalla legge \ref{legge:3}: più il flusso di cassa (ritorno di investimento)
+viene pagato a tempi lontani nel futuro, più il valore attuale diminuisce come effetto dell'aumento del
+rischio di investimento.
  
-non è quasi. sempre considerato  necessario
-poter valutare (attualizzare) un investimento che genera flussi di cassa durante
-due o più periodi successivi: lo scopo di questa sezione è generalizzare la formula
-del valore attuale in tal senso. Chiameremo \emph{anno} il sigolo periodo di valutazione,
-senza nessun riferimento alla unità di misura del tempo che ha lo stesso nome: il periodo
-di valutazione considerato può avere durata ad esempio di 6 mesi, 1 mese, 4 settimane, un
-giorno, un minuto, senza che cambi la logica del discorso
+L'analisi che svilupperemo permetterà di valutare (attualizzare) un investimento che genera (o forse
+sarebbe meglio dire ``che si attende generi'') più flussi di cassa a periodi di capitalizzazione arbitrari.
 
-Iniziamo definendo come si deve calcolare il valore attuale di un flusso di cassa
-prodotto solo dopo $n$ periodi di valutazione, con $n\ge 2$:
-
-In questo caso, occorre accordarsi a priori su come definire il valore attuale
-di un investimento: due scelte comuni sono le seguenti.In generale però ogni i
-\begin{defn}. Un investimento ha \emph{interesse semplice} se il flusso di cassa
-  che produce è sempre lo stesso.
+\begin{defn}\label{def:tval}
+  Chiamiamo genericamente \emph{anno} il periodo unitario di capitalizzazione di un investimento.
 \end{defn}
-Se abbiamo un investimento che produce $n$ flussi di cassa di valore 
+
+Precisiamo che il termine ``anno'' nella defninizione~\ref{def:tval} è solo convenzionale, senza nessuna
+relazione con l'omonima unità di misura del tempo: il periodo di capitalizzazione considerato può in effetti
+avere una durata effettiva qualsiasi, ad esempio 6 mesi, 4 settimane, un giorno, un minuto, ecc. senza che
+cambi la logica dell'analisi. In effetti, come vedremo, il periodo in cui l'investimento genera un ritorno
+può anche essere, in un preciso senso, infinitesimo.
+
+In realtà più che esplicitare una dipendenza dal tempo, definiremo due possibili andamenti temporali
+del valore attuale in funzione del \emph{tipo di interesse} associato a un dato investimento, vale a dire
+alla struttura degli interessi (definizione~\ref{def:int}) che produce. Allo scopo notiamo che \emph{gli 
+interessi prodotti da un dato investimento dipendono sempre dal costo dello stesso} (identificabile
+col \VA) e dal tasso di sconto relativo al periodo di capitalizzazione, e diamo le seguenti due definizioni.
+
+\begin{defn}\label{def:isemplice}
+  Un investimento ha \emph{interesse semplice} se gli interessi che produce dipendono \emph{solamente}
+  dal capitale iniziale investito e dal tasso di sconto relativo al periodo di capitalizzazione.
+\end{defn}
+
+In parole povere, la definizione~\ref{def:isemplice} dice che gli interessi prodotti dall'investimento ai tempi
+precedenti non vengono usati, ossia non vengono \emph{reinvestiti} per contribuire ai flussi di cassa futuri.
+Questa considerazione ci porta alla seconda definizione di tipo di interesse associato a un investimento
+che consideriamo in questa sede.
+
+\begin{defn} \label{def:icomposto}
+  Un investimento ha \emph{interesse composito} (o \emph{composto}) se gli interessi che produce dipendono
+  dal capitale iniziale investito, dal tasso di sconto relativo al periodo di capitalizzazione e dagli interessi
+  maturati nei periodi di capitalizzazione precedenti. 
+\end{defn}
+
+In parole povere, la definizione~\ref{def:icomposto} dice che in un investimento a interesse composito gli interessi
+maturati durante ogni periodo di capitalizzazione \emph{sono tacitamente reinvestiti} per contribuire ai flussi di cassa
+futuri e aumentare quindi il suo valore attuale.
+
+\section[Intervallo di capitalizzazione discreto]{Il valore attuale per investimenti con intervallo di capitalizzazione discreto}
+\label{sec:tdiscreti}
+
+In questa sezione mostriamo come calcolare il valore attuale di un flusso di cassa che viene generato da un investimento 
+dopo un periodo di capitalizzazione complessivo pari a $n$ periodi di capitalizzazione unitari, con $n\ge 2$.
+
+\subsection{Investimento a interesse semplice}
+\label{sec:isemplice_td}
+
+Se abbiamo un investimento con interesse semplice che produce un flusso di cassa $C$ dopo $n$ periodi di capitalizzazione
+e rendimenti $r_i$, $i= 1, \ldots, n$ variabili per ogni periodo di capitalizzazione, il suo valore attuale \VA\ è dato dalla
+seguente formula
+
 \begin{equation}
-  \label{eq:isemplice}
-  \VA=\frac{C}{1+\sum_{i=1}^nr_i}
+  \label{eq:isemplice_td}
+  \VA=\frac{C}{1+\sum_{i=1}^nr_i}.
+\end{equation}
+Nell'ipotesi (alquanto improbabile) che il tasso di rendimento sia costante per tutti gli $n$ periodi di capitalizzazione,
+la formula \eqref{eq:isemplice_td} assume la seguente semplice forma
+\[
+  \VA=\frac{C}{1+nr}.
+\]
+
+\subsection{Investimento a interesse composito}
+\label{sec:icomposto_td}
+
+Se abbiamo un investimento con interesse composto che produce un flusso di cassa $C$ dopo $n$ periodi di capitalizzazione
+e rendimenti $r_i$, $i= 1, \ldots, n$ variabili per ogni periodo di capitalizzazione, il suo valore attuale \VA\ è dato dalla
+seguente formula
+\begin{equation}
+  \label{eq:icomposto_td}
+  \VA=\frac{C}{\prod_{i=1}^n(1+r_i)}.
+\end{equation}
+Nell'ipotesi  (alquanto improbabile) che il tasso di rendimento sia costante per tutti gli $n$ periodi di capitalizzazione,
+la formula \eqref{eq:icomposto_td} assume la seguente semplice forma
+\[
+  \VA=\frac{C}{(1+r)^n}.
+\]
+
+\begin{oss}\label{oss:isemplice}
+  L'interesse semplice ha più un interesse storico che pratico, anche se a livello di certe offerte
+  commerciali è ancora usato: per una breve discussione sul suo uso si può consultare questa domanda
+  e risposta~\cite{Romanchuk2021} sull'Economics.StackExchange.
+\end{oss}
+
+\begin{oss}
+  Quando il periodo di capitalizzazione si riduce a quello unitario, le formule~\eqref{eq:isemplice_td} e~\eqref{eq:icomposto_td}
+  si riducono alla formula del valore attuale~\eqref{eq:VA}: inoltre, in entrambe i casi, confrontando i valori attuali
+  calcolati su due periodi di capitalizzazione rispettivamente pari a $n$ e $m$ volte, con $n>m$, il periodo unitario, si ha
+  \[
+    \left.\VA\right|_{n}> \left.\VA\right|_{m}
+  \]
+  quindi la legge~\ref{legge:3} è verificata da entrambe queste definizioni. Esse allora rappresentano due accettabili
+  dipendenze temporali del valore attuale in accordo con le leggi del capitolo~\ref{chap:Leggi_fondamentali}. 
+\end{oss}
+
+\section[Intervallo di capitalizzazione continuo]{Il valore attuale per investimenti con intervallo di capitalizzazione continuo}
+\label{sec:tcontinui}
+In questa sezione descriviamo come estendere le formule del capitolo precedente al caso in cui i periodi di capitalizzazione
+aumentino di numero e abbiano durata temporale sempre minore. In un certo senso suddividiamo l'intervallo di capitalizzazione
+$t$ in $n$ intervalli uguali in modo che la loro durata totale sia costante, vale a dire $ t=n\cdot\frac{t}{n}$, poi usiamo
+questi intervalli nelle formule~\eqref{eq:isemplice_td} e~\eqref{eq:icomposto_td}, e vediamo come si trasformano quando aumentano
+indefinitamente di numero. Naturalmente non svilupperemo tutti i dettagli analitici, in particolare assumendo familiare il concetto
+di \emph{limite}: consigliamo ai lettori interessati ad approfondire gli aspetti puramente matematici della questione l'ottimo
+(e impegnativo) libro di testo~\cite{Fischer1983}.\newline
+La capitalizzazione nel continuo non costituisce, come si potrebbe pensare, una generalizzazione fine a se stessa: è invece
+un modo, perfettamente legale, per sfruttare al meglio i limiti di legge sul valore massimo del rendimento dei depositi bancari.
+Si può infatti dimostrare (si veda~\cite[§3.3.1, p. 45, esempio 1]{brealey_et_al1999}) che un investimento con rendimento
+a tasso composto continuo del 10\% equivale a un rendimento a tasso composto su base annua del 10,5\%: siccome la legislazione
+non impone un particolare periodo di capitalizzazione, la banca che la capitalizzazione dei depositi nel continuo offre di fatto
+rendimenti leggermente più alti del limite di legge pur agendo in modo perfettamente legale.
+
+
+\subsection{Investimento a interesse semplice}
+\label{sec:isemplice_tc}
+
+Scriviamo la formula~\eqref{eq:isemplice_td} per $n$ periodi di capitalizzazione di durata decrescente $t\over n$, 
+ammettiamo tassi di sconto $r_i$, $i= 1, \ldots, n$ variabili per ogni periodo di capitalizzazione e operiamo la sostituzione
+formale $r_i\mapsto {r_i\over n}$: otteniamo così la formula
+\[
+    \VA=\frac{C}{1+\sum_{i=1}^n\frac{r_i}{n}},
+\]
+da cui, calcolandone il limite per $n\to \infty$ grazie alla definizione di integrale di Riemann
+(si veda~\cite[chapter \Romannum{13}, §\Romannum{13}.4, pp.~629--638]{Fischer1983}), segue che
+\begin{equation}
+  \label{eq:isemplice_tc}
+  \VA=\frac{C}{\displaystyle{1+\int_{0}^tr(s)\dm s}}.
+\end{equation}
+Nell'ipotesi (alquanto improbabile) che il tasso di rendimento sia costante per tutto il periodo di capitalizzazione,
+la formula \eqref{eq:isemplice_tc} si riduce praticamente alla~\eqref{eq:VA}, vale a dire
+\[
+  \VA=\frac{C}{1+rt}.
+\]
+
+\begin{oss}
+  Come visto nell'esempio precedente, l'investimento con interesse semplice ha un valore attuale sostanzialmente identico
+  a quello dato dalla formula~\eqref{eq:VA}: possiamo quindi affermare che~\eqref{eq:isemplice_tc} \emph{è la più semplice generalizzazione
+  del valore attuale a intervalli di capitalizzazioni arbitrari}. Detto questo e memori dell'osservazione~\ref{oss:isemplice},
+  non torneremo più su questo tipo di investimento.
+\end{oss}
+
+\subsection{Investimento a interesse composito}
+\label{sec:icomposito_tc}
+
+In modo analogo a quanto fatto nel paragrafo precedente, scriviamo la formula~\eqref{eq:isemplice_tc} per $n$ periodi
+di capitalizzazione di durata decrescente $t\over n$ a cui corrispondono tassi di sconto $r_i$, $i= 1, \ldots, n$
+variabili per ogni periodo di capitalizzazione: operando di nuovo la sostituzione formale $r_i\mapsto {r_i\over n}$,
+otteniamo formula,
+\[
+   \VA_t=\frac{C}{\prod_{i=1}^n\left(1+\frac{r_i}{n}\right)}.
+ \]
+ Anche in questo caso passiamo al limite per $n\to\infty$ ma sia il procedimento che il risultato ottenuto sono più
+ complicati:  il denominatore della formula diviene il prodotto integrale della funzione $r(t)$, introdotto da Vito
+ Volterra nel 1887 (si veda~\cite{Volterra1887} oppure~\cite[pp. 291--293]{Volterra1954}). Precisamente si ha 
+ \begin{equation*}
+   %\pint\limits_{0}^{t}(1+r(s))^{\dm s}
+   \lim_{n\to\infty}\prod_{i=1}^n\left(1+\frac{r_i}{n}\right)=\exp\left({\displaystyle{\int_{0}^tr(s)\dm s}}\right) \triangleq \pint_{0}^{t}(1+r(s))^{\dm s}
+ \end{equation*}
+ (si veda ad esempio~\cite[chapter 2, §2.5, example 2.5.6, p. 35]{Slavik2007}) e di conseguenza
+\begin{equation}
+  \label{eq:icomposto_tc}
+  \VA=\frac{C}{\exp\left(\int_{0}^tr(s)\dm s\right)}\triangleq\frac{C}{\displaystyle{\pint_{0}^{t}(1+r(s))^{\dm s}}}
 \end{equation}
 Nell'ipotesi  (alquanto improbabile) che il tasso di rendimento sia costante per tutti
-gli $n$ periodi di valutazione, la formula \eqref{eq:isemplice} assume la seguente semplice
+gli $n$ periodi di capitalizzazione, la formula \eqref{eq:icomposto_td} assume la seguente semplice
 forma:
 \[
-  \VA=\frac{C}{1+nr}
-\]
-\begin{defn}
-  Un investimento ha interesse composito sen
-\end{defn}
-Se abbiamo un investimento a interesse semplice che produce un flusso di cassa $C$ dopo
-$n$ anni
-\begin{equation}
-  \label{eq:icomposto}
-  \VA=\frac{C}{\prod_{i=1}^n(1+r_i)}
-\end{equation}
-Nell'ipotesi  (alquanto improbabile) che il tasso di rendimento sia costante per tutti
-gli $n$ periodi di valutazione, la formula \eqref{eq:isemplice} assume la seguente semplice
-forma:
-\[
-  \VA=\frac{C}{(1+r)^n}
+  \VA=\frac{C}{e^{rt}}
 \]
 
+\begin{oss}
+  Con intervallo di capitalizzazione continuo e periodo di capitalizzazione unitario, ossia $t=1$, la formula~\eqref{eq:isemplice_tc}
+  si riduce ancora alla formula del valore attuale~\eqref{eq:VA}, mentre questo non avviene più per la formula~\eqref{eq:icomposto_tc}:
+  comunque in entrambe i casi, se si considerano due periodi di capitalizzazione $t_1<t_2$, si ha
+  \[
+    \left.\VA\right|_{t_2}> \left.\VA\right|_{t_1}
+  \]
+  quindi la legge~\ref{legge:3} è verificata da queste definizioni. Esse esplicitano perciò due possibile dipendenze temporali del valore attuale
+  in accordo con le leggi del capitolo~\ref{chap:Leggi_fondamentali}. 
+\end{oss}
+
+\section{Sul significato delle leggi di interesse}
+\label{sec:significato}
+
+Questa sezione è stata ispirata dalla lettura dell'articolo di Eugenio Levi~\cite{Levi1957} e presenta tre interpretazioni che gli studiosi di economia
+danno delle leggi di intersse descritte nelle sezioni precedenti di questo capitolo. La prima di queste interpretazioni è una interpretazione di tipo
+\emph{macroeconomico}, la seconda è quella seguita da Brian Romanchuk~\cite{Romanchuk2021}, mentre la terza ed ultima interpretazione è dovuta allo
+stesso Levi.
+\begin{enumerate}
+\item \textbf{Interpretazione macroeconomica}: la legge di interesse esprime effettivamente il flusso di cassa $C$ come funzione univoca del capitale investito
+  \VA, dell'istante di inzio dell'investimento (che noi abbiamo per semplicità finora assunto come l'istante attuale, lo ``zero'' del nostro riferimento
+  temporale) e della sua durata.
+\item \textbf{Interpretazione ``commerciale''}\footnotemark{}: gli investimenti sono comuni contratti di compravendita dove ciò che ha effettivamente importanza sono
+  solo i valori del flusso di cassa $C$ e del capitale investito $VA$, definiti dagli accordi tra i contraenti. La legge di interesse ha solo funzione
+  strumento di calcolo per quei contratti dove il tempo di durata non è fissato rigidamente e può essere variato dai contraenti.
+\item \textbf{Interpretazione ``probabilistica''}\footnotemark[\value{footnote}]: la legge di interesse esprime, con riferimento ad un dato investitore, le previsione su risultati degli
+  investimenti che potra compiere.
+\end{enumerate}
+
+\footnotetext[1]{Le virgolette sul nome di questa interpretazione indicano che Levi non lo usa: la ho chiamata io in questo modo per comodità di linguaggio.}

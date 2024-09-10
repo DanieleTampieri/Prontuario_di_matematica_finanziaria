@@ -1,61 +1,161 @@
-
 \chapter{Leggi fondamentali}
 \label{chap:Leggi_fondamentali}
 
+La definizione seguente, anche se piuttosto informale, è centrale a tutta la trattazione.
+\begin{defn}\label{def:cap}
+  Il ``\emph{capitale}'' è una risorsa economica, un ``\emph{flusso di cassa}'', un ``\emph{bene}'',
+  qualcosa che per tutti ha un ``\emph{valore}'' e che quindi si può misurare, comprare e scambiare.
+\end{defn}
+I termini indicati nella definizione~\ref{def:cap} verranno da ora in avanti usati come sinonimi.
+Chiameremo \emph{denaro} la generica unità di misura del capitale, valore o che dir si voglia.
+
+Ciò premesso, possiamo enunciare il ``principio zero'' dell'economia. 
+
 \begin{legge}\label{law:0}
-  Esiste un mercato dei capitali.
+  Esiste almeno un mercato dei capitali.
 \end{legge}
-I capitali sono risorse economiche, ``flussi di cassa'', qualcosa che per tutti ha un ``valore''
-e che quindi si può comprare e scambiare. Chiameremo \emph{euro} la generica unità di misura del
-capitale, valore o che dir si voglia, senza riferimento alcuno alla valuta con lo stesso nome:
-avremmo potuto usare ``soldo''. Chiameremo infine \emph{investimento} l'acquisto di capitale
-disponibile solo ad un tempo futuro rispetto a quello in cui si conclude l'acquisto.
+La legge~\ref{law:0} non ha scopo ``operativo'' perché non dice come si realizza questo mercato: dice
+semplicemente che esiste un luogo e/o un modo e/o un metodo che permette scambi di capitale, beni, valori.
+È anche ovvio che possono esistere, e di conseguenza esistono, più mercati distinti tra loro. Scopo di questa
+legge è quindi solo garantire la coerenza logica della teoria che si sviluppa (sic!): si ammette che ciò di cui
+si parla esista effettivamente nei termini in cui se ne parla.
+
+\begin{defn}\label{def:inv}
+  L'acquisto di un bene disponibile solo ad un tempo futuro rispetto al momento in cui si conlude
+  l'acquisto stesso si definisce \emph{investimento}.
+\end{defn}
+L'oggetto della definizione~\ref{def:inv} è uno dei concetti centrali di queste note. I (semplici) metodi
+matematici descritti qui e nel seguito sono stati sviluppati per valutare il valore degli investimenti e quindi
+decidere se abbia ragionevolmente senso fare o no un dato investimento.\newline
+La locuzione ``ragionevolmente'' significa ``con rischio accettabile di perdere il valore investito'' e il rischio
+è definito e quantificato (almeno qualitativamente) dalle tre leggi che sono enunciate qui di seguito. Rimandiamo
+quindi la discussione sul suo significato a dopo la loro introduzione: per ora è sufficiente la comprensione intuitiva
+che si ha di questo concetto.\newline
+Come per la definizione~\ref{def:cap}, i termini che identificano il prezzo dell'investimento (definizione~\ref{def:inv})
+verranno da ora in avanti usati come sinonimi.
+
+La prossima legge ha natura diversa rispetto al ``principio zero'' perché stabilisce una relazione tra i valori di capitali
+disponibili a tempi diversi, e quindi in definitiva tratta di investimenti (si veda~\cite[§2.1.1 p. 12]{brealey_et_al1999}).
 
 \begin{legge}\label{legge:1}
-  Un euro oggi vale più di un euro domani.
+  Un denaro oggi vale più di un denaro domani.
 \end{legge}
-La legge \ref{legge:1} è espressa dalla seguente formula del \emph{valore attuale}
-\VA: il valore attuale di un possible un flusso di cassa futuro $C$, disponibile
-al tempo futuro $t$, è
+La legge \ref{legge:1} formalizza il concetto intuitivo di \emph{rischio di investimento}: il bene di cui si dispone
+al presente ha maggior valore rispetto a uno di ugual valore nominale ma di cui si può (forse) disporre solo in futuro.
+L'espressione quantitativa di questa legge è data dalla seguente equazione, detta \emph{formula del valore attuale} \VA. 
 \begin{equation}
   \label{eq:VA}
   \VA=\frac{C}{1+r}
 \end{equation}
-dove il numero positivo $r$ è chiamato \emph{rendimento} o \emph{tasso di sconto} o
-\emph{costo del capitale}. Calcolare il valore attuale \VA\ di un flusso di cassa futuro
-si dice anche ``attualizzare'' il flusso di cassa.
-La formula \eqref{eq:VA} viene di solito scritta nella più comune forma 
-\[
-  C=(1+r)\VA,
-\]
-che enfatizza la grandezza relativa del flusso di cassa futuro rispetto al valore attuale.
-Questa forma è però, in un certo senso, fuorviante perché $C$ è incerto siccome disponibile
-solo nel futuro, mentre \VA\ è certo perché disponibile ora, nel presente.
+dove
+\begin{itemize}
+\item  $C$ è un flusso di cassa futuro,
+\item \VA\ è il valore attuale del flusso di cassa $C$,
+\item $r$ è un numero reale positivo, chiamato \emph{interesse} o \emph{rendimento} o \emph{tasso di sconto} o
+  \emph{tasso di attualizzazione} o \emph{costo del capitale} o \emph{costo opportunità del capitale}, che esprime
+  quantitativamente quanto è inferiore il valore di un capitale disponibile solo nel futuro rispetto al valore dello
+  stesso capitale ma con disponibilità immediata. Come per i termini della definizione~\ref{def:cap} e della
+  definizione~\eqref{def:inv}, i nomi di $r$ verranno da ora in avanti usati come sinonimi.
+\end{itemize}
 
-La considerazione dell'incertezza ci porta al secondo
-principio dell'economia (\cite{brealey_et_al1999}, §2.1.3 p. 14)
+\begin{oss}\label{oss:va}
+  Il valore attuale è il valore dell'investimento al tempo presente. Altri locuzioni usate per identificare il valore attuale
+  sono \emph{valore iniziale}  o \emph{investimento iniziale}, \emph{capitale investito} o anche \emph{costo dell'investimento}.
+\end{oss}
+
+\begin{oss}
+  Calcolare il valore attuale \VA\ di un flusso di cassa futuro si dice anche ``\emph{attualizzare il flusso di cassa}''.
+\end{oss}
+\begin{oss}
+  Nell'applicazione della formula~\eqref{eq:VA} è implicito il fatto che la valutazione di \VA\ si fa per un capitale
+  disponibile solo dopo un tempo $t$: questo tempo prende il nome di \emph{intervallo (o periodo o tempo) di capitalizzazione
+    dell'investimento}. In pratica questo tempo $t$ può avere i valori più disparati od essere, in un senso che preciseremo
+  nel capitolo seguente, infinitesimo.
+\end{oss}
+\begin{oss}
+  La formula \eqref{eq:VA} viene di solito scritta nella forma più comune 
+  \begin{equation}
+    \label{eq:VA_prop}
+    C=(1+r)\VA,\tag{\ref*{eq:VA} bis}
+  \end{equation}
+  che enfatizza la grandezza relativa del flusso di cassa futuro rispetto al valore attuale: la formula è presentata e analizzata
+  in questa forma nella bella trattazione~\cite{Levi1957} (si noti la forma estremamente generale, chiara e concisa che essa assume
+  in~\cite[§1, p. 151]{Levi1957}), dove sono discussi anche i temi del capitolo~\ref{chap:Formule_fondamentali}.
+  Questa forma è però, in un certo senso, fuorviante perché fa sembrare che entrambi i capitali coinvolti siano certi e disponibili.
+  In realtà $C$ è disponibile solo nel futuro ed è quindi incerto, mentre \VA\ è certo perché è quello che occorre per pagare
+  l'investimento.
+\end{oss}
+
+\begin{oss}
+  Le equazioni~\eqref{eq:VA} e~\eqref{eq:VA_prop} esprimono implicitamente una \emph{ipotesi di proporzionalità} tra il flusso di cassa
+  futuro e il valore attuale \VA: questa ipotesi non è vera in generale (si veda ad esempio~\cite[§9, p. 158]{Levi1957}), e per rendersi
+  conto di ciò basta pensare a come cambiano le possibilità di investimento disponibili in funzione dell'entità del capitale che è possibile
+  investire. Tuttavia essa è sicuramente verificata all'interno di una stessa classe di investimenti: infatti in un mercato di capitali che
+  sia in un certo senso ``efficiente'' (in pratica dove è possibile investire e disinvestire) nessuno accetta (se non è costretto
+  ...) un investimento dove per ottenere $10$ occorre sborsare $10^2=100$ e, viceversa, nessuno propone un investimento che, a fronte
+  di un gettito iniziale di $10$ lo obbligherebbe ad un esborso di $10^2=100$ allo scadere del tempo di capitalizzazione (a meno che
+  il proponente non abbia intenzione di dileguarsi prima...).
+\end{oss}
+
+\begin{defn}\label{def:int}
+  In accordo con la definizione~\ref{def:inv} e con l'osservazione~\ref{oss:va} \emph{assumiamo che il valore attuale \VA\ coincida
+    con quanto pagato un dato investimento}. In questo caso capitale $r\VA$ in eccesso che risulta (teoricamente) disponibile al momento
+  di capitalizzazione dell'investimento stesso viene chiamato \emph{interessi dell'investimento}.
+\end{defn}
+
+La terminologia introdotta dalla definizione~\ref{def:int} si mantiene anche quando (ed è quasi sempre il caso, come vederemo nel
+capitolo~\ref{chap:Il_VAN} seguente) \emph{il costo dell'investimento non coincide con il suo valore \VA }.
+
+La considerazione dell'incertezza sulla disponibilità effettiva futura dell'investimento ci porta al secondo principio fondamentale
+dell'economia (\cite[§2.1.3 p. 14]{brealey_et_al1999})
 
 \begin{legge}\label{legge:2}
-  Un euro sicuro vale più di un euro rischioso.  
+  Un denaro sicuro vale più di un denaro rischioso.  
 \end{legge}
-La legge \ref{legge:2} dice come cambia il valore del tasso di sconto $r$ in funzione del
-rischio assunto per un dato investimento: un flusso di cassa futuro, a parità di valore nominale,
-ha un valore attuale maggiore se è meno rischioso quindi, all'aumentare del rischio, il valore attuale
-diminuisce quindi il tasso di sconto è maggiore.
+La legge~\ref{legge:2} dice come cambia il valore del tasso di sconto $r$ in funzione del rischio assunto per un dato investimento:
+dati due investimenti con flusso di cassa futuro $C$ dello stesso valore nominale, dei due quello più rischioso ha un valore attuale minore.
+\begin{oss}
+  Più chiaramente, chamati $\VA_1$ e $\VA_2$ i valori attuali di due investimenti A e B con stesso flusso di cassa futuro $C$,
+  la condizione ``\emph{l'investimento A è più rischioso dell'investimento B}'' corrisponde alla condizione $\VA_1< \VA_2$,
+  vale a dire
+  \[
+    \frac{C}{1+r_1} < \frac{C}{1+r_2} \iff r_2 < r_1.
+  \]
+  Quindi a parità di flusso di cassa, \emph{ad un investimento rischioso corrisponde un rendimento maggiore}.
+\end{oss}
 
-Avendo capito come attualizzare flussi di cassa futuri e introdotto il concetto rischio, possiamo introdurre
-la prossima legge dell'economia, che ci dice quale è la relazione tra i rischi di flussi di cassa disponibili
-a tempi sempre più distanti nel futuro.
+\begin{oss}
+  La legge~\ref{legge:2} dice che \emph{il tasso di sconto è una misura del rischio di investimento}. In effetti, elaborando le osservazioni
+  di~\cite[§7, p. 158]{Levi1957} potremmo dire che questa quantità definisce il valore attuale \VA, quindi \emph{il tasso di sconto si può
+    cosiderare come previsione sui risultati degli investimenti che potrà compiere un dato investitore} (o eventualmente dei prestiti
+  che potrà contrarre): diremo qualcosa di più su questo argomento nel contesto del capitolo~\ref{chap:Formule_fondamentali}, .
+\end{oss}
+
+Avendo stabilito come attualizzare flussi di cassa futuri e introdotto il concetto rischio, possiamo introdurre
+la prossima legge dell'economia, che ci dice quale è la relazione tra i valori attuali di flussi di cassa
+disponibili a tempi sempre più distanti nel futuro (\cite[§3.1.2 pp. 35--36]{brealey_et_al1999}).
 
 \begin{legge}\label{legge:3}
-  Un euro domani vale più un euro dopodomani.
+  Un denaro domani vale più di un denaro dopodomani.
 \end{legge}
-La legge \ref{legge:3} non è espressa da una formula come \eqref{eq:VA}, ma da una disuguaglianza:
-se $\VA_{t_1}$ e $\VA_{t_2}$ sono rispettivamente i valori attuali di uno stesso flusso di cassa $C$
-disponibile a due diversi tempi futuri $t_1$ e $t_2$ con $t_1<t_2$, allora deve essere
+La formulazione generale della legge~\ref{legge:3} non ha forma di equazione come per~\ref{legge:1}, ma di disuguaglianza:
+se $\VA_{t_1}$ e $\VA_{t_2}$ sono rispettivamente i valori attuali di uno stesso flusso di
+cassa $C$ disponibile a due diversi tempi di capitalizzazione $t_1$ e $t_2$ con $t_1<t_2$, deve essere necessariamente
 \begin{equation}
   \label{eq:legge3}
   \VA_{t_1}>\VA_{t_2}
 \end{equation}
-La legge \ref{legge:3} formalizza il fatto che non è possibile creare capitale dal nulla (\cite{brealey_et_al1999},
-§3.1.2 p. 35).
+La ragione di questa differenza è dovuta al fatto che mentre la legge~\ref{legge:1} definisce la forma matematica del
+valore attuale \VA\ per un implicito (ma fissato) periodo di capitalizzazione $t$, la legge~\ref{legge:3}
+stabilisce quale proprietà devono necessariamente avere tutte le generalizzazioni (ne vedremo alcune prossimo capitolo)
+della prima legge a tempi $t$ arbitrari ed espliciti. Nel gergo tecnico della fisica dei mezzi continui si dice che
+questa è una \emph{legge costitutiva}.
+\begin{oss}
+  La legge~\ref{legge:3} formalizza il fatto che non è possibile creare capitale dal nulla: l'argomento è approfondito
+  nel testo \cite[§3.1.2 p. 35]{brealey_et_al1999} che illustra anche con un esempio spiritoso perché non esitono
+  ``macchine  per fare soldi''.
+\end{oss}
+\begin{oss}
+  Le leggi~\ref{legge:1},\ref{legge:2} e \ref{legge:3} possono essere sintetizzate dicendo che il valore attuale \VA\
+  di un investmento è funzione strettamente monotona decrescente del suo rischio e della sua durata.
+\end{oss}

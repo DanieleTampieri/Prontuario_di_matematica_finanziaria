@@ -4,10 +4,11 @@
 *.pdf
 *.bak
 *.sav
-.#capitolo1.tex
-#capitolo1.tex#
-*.tex#
 *.bbl
 *.blg
 *.idx
 *.toc
+*.DS_Store
+*.hst
+*.ver
+*.*~

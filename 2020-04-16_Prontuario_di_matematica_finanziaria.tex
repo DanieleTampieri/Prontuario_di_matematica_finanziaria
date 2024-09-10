@@ -1,19 +1,18 @@
- %********************************************************************
+%********************************************************************
 %
 %   Prontuario di matematica finanziaria
 % 
-%********************************************************************
-\documentclass[a4paper,10pt]{book}
+%********************************************************************9
+\documentclass[a4paper,10pt,abbreviations,chapterprefix]{book}
 %********************************************************************
 %            Packages
 %********************************************************************
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage[intlimits]{amsmath}
+\usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{mathrsfs}
-%\usepackage{fouriernc}
+\usepackage{graphics,mathrsfs}
 \usepackage{stix}
 \usepackage{makeidx}
 \usepackage{IEEEtrantools}
@@ -25,32 +24,88 @@
 \newcommand{\qed}{\hfill$\blacksquare$\newline}
 \newcommand{\VA}{\ensuremath{\mathrm{VA}}}    % Valore attuale
 \newcommand{\VAN}{\ensuremath{\mathrm{VAN}}}  % Valore attuale netto
-\newtheorem{cor}{Corollario}
-\newtheorem{defn}{Definizione}
+
+% Definizione dell'integrale-prodotto di Volterra
+\makeatletter
+\NewDocumentCommand{\pint}{t\limits e{_^}}{%
+  \DOTSI\pint@{#1}{#2}{#3}%
+}
+\NewDocumentCommand{\pint@}{mmm}{%
+  \mathop{%
+    \IfBooleanTF{#1}{\pint@limits}{\pint@nolimits}{#2}{#3}%
+  }%
+}
+\NewDocumentCommand{\pint@limits}{mm}{%
+  \mathpalette\pint@@limits{{#1}{#2}}%
+}
+\NewDocumentCommand{\pint@@limits}{mm}{%
+  \pint@@@limits#1#2%
+}
+\NewDocumentCommand{\pint@@@limits}{mmm}{%
+  \mathop{\vcenter{%
+    \sbox\z@{\raisebox{\depth}{$\m@th#1\int$}}%
+    \hbox{\resizebox{!}{0.95\ht\z@}{$\m@th\mathscr{P}$}\vphantom{\box\z@}}%
+  }}\limits\IfValueT{#2}{_{#2}}\IfValueT{#3}{^{\mspace{\if@display18\else9\fi mu}#3}}%
+}
+\NewDocumentCommand{\pint@nolimits}{mm}{%
+  \mathpalette\pint@@nolimits{{#1}{#2}}%
+}
+\NewDocumentCommand{\pint@@nolimits}{mm}{%
+  \pint@@@nolimits#1#2%
+}
+\NewDocumentCommand{\pint@@@nolimits}{mmm}{%
+  \vcenter{
+    \sbox\z@{\raisebox{\depth}{$\m@th#1\int$}}%
+    \hbox{\resizebox{!}{0.95\ht\z@}{$\m@th\mathscr{P}$}\vphantom{\box\z@}}%
+  }\IfValueT{#2}{_{\mspace{-\if@display24\else12\fi mu}#2}}\IfValueT{#3}{^{#3}}%
+}
+\makeatother
+
+
+\newtheorem{cor}{Corollario}[chapter]
+\newtheorem{defn}{Definizione}[chapter]
 \newtheorem{legge}{Legge}
-\newtheorem{oss}{Osservazione}
+\newtheorem{oss}{Osservazione}[chapter]
 \setcounter{legge}{-1}
 \newtheorem{lemma}{Lemma}
-%\newtheorem{stackrel}
-\newtheorem{thm}{Teorema}
+\newtheorem{thm}[chapter]{Teorema}
+\usepackage[tablegrid]{vhistory}
+\usepackage{relsize}
+\usepackage{romannum}
+\usepackage[symbol]{footmisc}
 \usepackage{hyperref}
+\usepackage[
+    type={CC},
+    modifier={by-sa},
+    version={3.0},
+]{doclicense}
+
 %********************************************************************
 %            Content
 %********************************************************************
 \author{Daniele Tampieri}
-\title{Riassunto di matematica finanziaria}
+\title{Appunti di matematica finanziaria}
 \makeindex
 \begin{document}
+\frontmatter
 \maketitle
+\pagenumbering{roman}
 \tableofcontents
 \mainmatter
+\pagenumbering{arabic}
+\include{introduzione}
 \include{capitolo1}
 \include{capitolo2}
-%\include{capitolo3}
+\include{capitolo3}
 %\include{capitolo4}
-%\backmatter
-\bibliographystyle{plain}
+\bibliographystyle{aomplain}
 \bibliography{2020-04-16_prontuario.bib}
-% \include{biblio}
-\printindex
+\backmatter
+\begin{versionhistory}
+  \vhEntry{0.0}{16.04.2020}{Daniele Tampieri}{Creazione}
+  \vhEntry{1.1}{19.05.2023}{Daniele Tampieri}{Prima versione pubblicata}
+  \vhEntry{1.2}{22.05.2023}{Daniele Tampieri}{Correzione refusi}
+  \vhEntry{1.3}{29.05.2023}{Daniele Tampieri}{Aggiunto capitolo 5}
+\end{versionhistory}
+\doclicenseThis
 \end{document}
