@@ -50,7 +50,7 @@ In parole povere, la definizione~\ref{def:icomposto} dice che in un investimento
 maturati durante ogni periodo di capitalizzazione \emph{sono tacitamente reinvestiti} per contribuire ai flussi di cassa
 futuri e aumentare quindi il suo valore attuale.
 
-\section[Intervallo di capitalizzazione discreto]{Il valore attuale per investimenti con intervallo di capitalizzazione discreto}
+\section[Capitalizzazione a tempi discreti]{Il valore attuale per investimenti a tempi di capitalizzazione discreti}
 \label{sec:tdiscreti}
 
 In questa sezione mostriamo come calcolare il valore attuale di un flusso di cassa che viene generato da un investimento 
@@ -59,18 +59,18 @@ dopo un periodo di capitalizzazione complessivo pari a $n$ periodi di capitalizz
 \subsection{Investimento a interesse semplice}
 \label{sec:isemplice_td}
 
-Se abbiamo un investimento con interesse semplice che produce un flusso di cassa $C$ dopo $n$ periodi di capitalizzazione
+Se abbiamo un investimento con interesse semplice che produce un flusso di cassa $C_n$ dopo $n$ periodi di capitalizzazione
 e rendimenti $r_i$, $i= 1, \ldots, n$ variabili per ogni periodo di capitalizzazione, il suo valore attuale \VA\ è dato dalla
 seguente formula
 
 \begin{equation}
   \label{eq:isemplice_td}
-  \VA=\frac{C}{1+\sum_{i=1}^nr_i}.
+  \VA=\frac{C_n}{1+\sum_{i=1}^nr_i}.
 \end{equation}
 Nell'ipotesi (alquanto improbabile) che il tasso di rendimento sia costante per tutti gli $n$ periodi di capitalizzazione,
 la formula \eqref{eq:isemplice_td} assume la seguente semplice forma
 \[
-  \VA=\frac{C}{1+nr}.
+  \VA=\frac{C_n}{1+nr}.
 \]
 
 \subsection{Investimento a interesse composito}
@@ -81,12 +81,12 @@ e rendimenti $r_i$, $i= 1, \ldots, n$ variabili per ogni periodo di capitalizzaz
 seguente formula
 \begin{equation}
   \label{eq:icomposto_td}
-  \VA=\frac{C}{\prod_{i=1}^n(1+r_i)}.
+  \VA=\frac{C_n}{\prod_{i=1}^n(1+r_i)}.
 \end{equation}
 Nell'ipotesi  (alquanto improbabile) che il tasso di rendimento sia costante per tutti gli $n$ periodi di capitalizzazione,
 la formula \eqref{eq:icomposto_td} assume la seguente semplice forma
 \[
-  \VA=\frac{C}{(1+r)^n}.
+  \VA=\frac{C_n}{(1+r)^n}.
 \]
 
 \begin{oss}\label{oss:isemplice}
@@ -106,7 +106,7 @@ la formula \eqref{eq:icomposto_td} assume la seguente semplice forma
   dipendenze temporali del valore attuale in accordo con le leggi del capitolo~\ref{chap:Leggi_fondamentali}. 
 \end{oss}
 
-\section[Intervallo di capitalizzazione continuo]{Il valore attuale per investimenti con intervallo di capitalizzazione continuo}
+\section[Capitalizzazione continua]{Il valore attuale per investimenti a capitalizzazione continua}
 \label{sec:tcontinui}
 In questa sezione descriviamo come estendere le formule del capitolo precedente al caso in cui i periodi di capitalizzazione
 aumentino di numero e abbiano durata temporale sempre minore. In un certo senso suddividiamo l'intervallo di capitalizzazione
@@ -130,18 +130,18 @@ Scriviamo la formula~\eqref{eq:isemplice_td} per $n$ periodi di capitalizzazione
 ammettiamo tassi di sconto $r_i$, $i= 1, \ldots, n$ variabili per ogni periodo di capitalizzazione e operiamo la sostituzione
 formale $r_i\mapsto {r_i\over n}$: otteniamo così la formula
 \[
-    \VA=\frac{C}{1+\sum_{i=1}^n\frac{r_i}{n}},
+    \VA=\frac{C_n}{1+\sum_{i=1}^n\frac{r_i}{n}},
 \]
 da cui, calcolandone il limite per $n\to \infty$ grazie alla definizione di integrale di Riemann
 (si veda~\cite[chapter \Romannum{13}, §\Romannum{13}.4, pp.~629--638]{Fischer1983}), segue che
 \begin{equation}
   \label{eq:isemplice_tc}
-  \VA=\frac{C}{\displaystyle{1+\int_{0}^tr(s)\dm s}}.
+  \VA=\frac{C_t}{\displaystyle{1+\int_{0}^tr(s)\dm s}}.
 \end{equation}
 Nell'ipotesi (alquanto improbabile) che il tasso di rendimento sia costante per tutto il periodo di capitalizzazione,
 la formula \eqref{eq:isemplice_tc} si riduce praticamente alla~\eqref{eq:VA}, vale a dire
 \[
-  \VA=\frac{C}{1+rt}.
+  \VA=\frac{C_t}{1+rt}.
 \]
 
 \begin{oss}
@@ -159,25 +159,24 @@ di capitalizzazione di durata decrescente $t\over n$ a cui corrispondono tassi d
 variabili per ogni periodo di capitalizzazione: operando di nuovo la sostituzione formale $r_i\mapsto {r_i\over n}$,
 otteniamo formula,
 \[
-   \VA_t=\frac{C}{\prod_{i=1}^n\left(1+\frac{r_i}{n}\right)}.
+   \VA_t=\frac{C_t}{\prod_{i=1}^n\left(1+\frac{r_i}{n}\right)}.
  \]
  Anche in questo caso passiamo al limite per $n\to\infty$ ma sia il procedimento che il risultato ottenuto sono più
  complicati:  il denominatore della formula diviene il prodotto integrale della funzione $r(t)$, introdotto da Vito
  Volterra nel 1887 (si veda~\cite{Volterra1887} oppure~\cite[pp. 291--293]{Volterra1954}). Precisamente si ha 
  \begin{equation*}
-   %\pint\limits_{0}^{t}(1+r(s))^{\dm s}
    \lim_{n\to\infty}\prod_{i=1}^n\left(1+\frac{r_i}{n}\right)=\exp\left({\displaystyle{\int_{0}^tr(s)\dm s}}\right) \triangleq \pint_{0}^{t}(1+r(s))^{\dm s}
  \end{equation*}
  (si veda ad esempio~\cite[chapter 2, §2.5, example 2.5.6, p. 35]{Slavik2007}) e di conseguenza
 \begin{equation}
   \label{eq:icomposto_tc}
-  \VA=\frac{C}{\exp\left(\int_{0}^tr(s)\dm s\right)}\triangleq\frac{C}{\displaystyle{\pint_{0}^{t}(1+r(s))^{\dm s}}}
+  \VA=\frac{C_t}{\exp\left(\int_{0}^tr(s)\dm s\right)}\triangleq\frac{C}{\displaystyle{\pint_{0}^{t}(1+r(s))^{\dm s}}}
 \end{equation}
 Nell'ipotesi  (alquanto improbabile) che il tasso di rendimento sia costante per tutti
 gli $n$ periodi di capitalizzazione, la formula \eqref{eq:icomposto_td} assume la seguente semplice
 forma:
 \[
-  \VA=\frac{C}{e^{rt}}
+  \VA=\frac{C_t}{e^{rt}}
 \]
 
 \begin{oss}
@@ -191,7 +190,7 @@ forma:
   in accordo con le leggi del capitolo~\ref{chap:Leggi_fondamentali}. 
 \end{oss}
 
-\section{Sul significato delle leggi di interesse}
+\section{Cenni sul significato delle leggi di interesse}
 \label{sec:significato}
 
 Questa sezione è stata ispirata dalla lettura dell'articolo di Eugenio Levi~\cite{Levi1957} e presenta tre interpretazioni che gli studiosi di economia
