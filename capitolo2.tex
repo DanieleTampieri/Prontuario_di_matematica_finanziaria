@@ -76,7 +76,7 @@ la formula \eqref{eq:isemplice_td} assume la seguente semplice forma
 \subsection{Investimento a interesse composito}
 \label{sec:icomposto_td}
 
-Se abbiamo un investimento con interesse composto che produce un flusso di cassa $C$ dopo $n$ periodi di capitalizzazione
+Se abbiamo un investimento con interesse composto che produce un flusso di cassa $C_n$ dopo $n$ periodi di capitalizzazione
 e rendimenti $r_i$, $i= 1, \ldots, n$ variabili per ogni periodo di capitalizzazione, il suo valore attuale \VA\ è dato dalla
 seguente formula
 \begin{equation}
@@ -117,10 +117,10 @@ di \emph{limite}: consigliamo ai lettori interessati ad approfondire gli aspetti
 (e impegnativo) libro di testo~\cite{Fischer1983}.\newline
 La capitalizzazione nel continuo non costituisce, come si potrebbe pensare, una generalizzazione fine a se stessa: è invece
 un modo, perfettamente legale, per sfruttare al meglio i limiti di legge sul valore massimo del rendimento dei depositi bancari.
-Si può infatti dimostrare (si veda~\cite[§3.3.1, p. 45, esempio 1]{brealey_et_al1999}) che un investimento con rendimento
+Si può infatti dimostrare (si veda per esempio~\cite[§3.3.1, p. 45, esempio 1]{brealey_et_al1999}) che un investimento con rendimento
 a tasso composto continuo del 10\% equivale a un rendimento a tasso composto su base annua del 10,5\%: siccome la legislazione
-non impone un particolare periodo di capitalizzazione, la banca che la capitalizzazione dei depositi nel continuo offre di fatto
-rendimenti leggermente più alti del limite di legge pur agendo in modo perfettamente legale.
+non impone un particolare periodo di capitalizzazione, la banca che offre la capitalizzazione dei depositi nel continuo offre di fatto
+rendimenti leggermente più alti pur agendo in modo perfettamente legale.
 
 
 \subsection{Investimento a interesse semplice}
@@ -133,7 +133,7 @@ formale $r_i\mapsto {r_i\over n}$: otteniamo così la formula
     \VA=\frac{C_n}{1+\sum_{i=1}^n\frac{r_i}{n}},
 \]
 da cui, calcolandone il limite per $n\to \infty$ grazie alla definizione di integrale di Riemann
-(si veda~\cite[chapter \Romannum{13}, §\Romannum{13}.4, pp.~629--638]{Fischer1983}), segue che
+(si veda per esempio~\cite[chapter \Romannum{13}, §\Romannum{13}.4, pp.~629--638]{Fischer1983}), segue che
 \begin{equation}
   \label{eq:isemplice_tc}
   \VA=\frac{C_t}{\displaystyle{1+\int_{0}^tr(s)\dm s}}.
